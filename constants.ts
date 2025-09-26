@@ -1,4 +1,3 @@
-
 import type { TaxBracket } from './types';
 
 export const INDIVIDUAL_TAX_BRACKETS: TaxBracket[] = [
@@ -17,7 +16,7 @@ export const CORPORATE_TAX_BRACKETS: TaxBracket[] = [
     { limit: 300000000000, rate: 0.21, deduction: 420000000 },
     { limit: Infinity, rate: 0.24, deduction: 9420000000 },
 ];
-export const SETTLEMENT_MONTHS: number[] = [8, 9, 10, 11, 12];
+export const SETTLEMENT_MONTHS: number[] = [6, 7, 8, 9, 10, 11, 12];
 export const BASIC_DEDUCTION: number = 1500000;
 
 interface ProfitMargin {
