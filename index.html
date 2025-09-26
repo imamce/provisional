@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종합소득세 가결산 계산기</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'media',
+        theme: {
+          extend: {
+            colors: {
+              'brand-blue': '#1B3F7A',
+              'brand-blue-dark': '#2a5fa5',
+            }
+          }
+        }
+      }
+    </script>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Google+Sans+Text);
+  html, body {
+    font-family: 'Google Sans Text', 'Pretendard', sans-serif;
+  }
+  .print-footer {
+    display: none;
+  }
+  @media print {
+    body {
+      background: white !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .no-print {
+      display: none !important;
+    }
+    
+    * {
+        color: black !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border-color: #e5e7eb !important;
+    }
+
+    main {
+      border: 1px solid #ddd !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+    .printable-content {
+      padding: 2rem !important;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        page-break-inside: auto;
+    }
+    tr { 
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group;
+    }
+    th, td {
+        border: 1px solid #e5e7eb !important;
+        padding: 0.5rem 1rem !important;
+        text-align: left;
+    }
+    thead th {
+        background-color: #f9fafb !important;
+    }
+    
+    tbody tr[class*="bg-slate-"],
+    tbody tr[class*="bg-sky-"] {
+        background-color: #f9fafb !important;
+    }
+
+    [class*="text-red-"] { color: #dc2626 !important; }
+    [class*="text-emerald-"] { color: #059669 !important; }
+    
+    .result-section h3 {
+        padding-top: 1rem;
+        margin-top: 1.5rem;
+        border-top: 1px solid #e5e7eb;
+    }
+    .result-section > div > div:first-of-type h3 {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
+
+    div[class*="bg-brand-blue"] {
+        background-color: #e0f2fe !important;
+        border: 1px solid #bae6fd !important;
+        padding: 1rem !important;
+    }
+    div[class*="bg-brand-blue"] * {
+        color: #0c4a6e !important;
+    }
+    div[class*="bg-brand-blue"] svg {
+        display: none !important;
+    }
+
+    div[class*="p-4"][class*="bg-slate-100"] {
+        background-color: #f9fafb !important;
+        border: 1px solid #e5e7eb !important;
+    }
+
+    .flex.w-full.h-5.rounded-full { border: 1px solid #d1d5db !important; }
+    div[class*="bg-[#1B3F7A]"] { background-color: #7dd3fc !important; }
+    div[class*="bg-emerald-500"] { background-color: #a7f3d0 !important; }
+    div[class*="bg-sky-500"] { background-color: #bae6fd !important; }
+    
+    [class*="group-hover\\:scale-100"] { display: none !important; }
+
+    .grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+
+    .print-footer {
+      display: block !important;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb !important;
+      font-size: 9px;
+      line-height: 1.5;
+      color: #6b7280 !important;
+      white-space: pre-wrap;
+    }
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-100 dark:bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
